@@ -1,6 +1,6 @@
 # nlp
 
-我的NLP项目进展
+我的NLP学习进展
 
 
 
@@ -42,6 +42,12 @@
 [蚂蚁金融NLP竞赛——文本语义相似度赛题总结](https://zhuanlan.zhihu.com/p/51675979)
 
 [别求面经了！小夕手把手教你斩下NLP算法岗offer！（19.3.21更新）](https://zhuanlan.zhihu.com/p/45802662)
+
+[如何与深度学习服务器优雅的交互？（长期更新）](https://zhuanlan.zhihu.com/p/32496193)
+
+[如何解决90％的NLP问题：逐步指导](https://zhuanlan.zhihu.com/p/57658502)
+
+[如何到top5%？NLP文本分类和情感分析竞赛总结](https://zhuanlan.zhihu.com/p/54397748)
 
 
 
@@ -192,8 +198,7 @@ NER (Named Entity Recognition，命名实体识别):
 意图识别：[《意图识别知识整理》](md/意图识别知识整理.md)
 
 - [NLP系列学习：意图识别](https://zhuanlan.zhihu.com/p/41944121)
-
-
+- [基于fastText的意图识别框架](https://zhuanlan.zhihu.com/p/53297108)
 
 
 
