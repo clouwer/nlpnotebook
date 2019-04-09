@@ -43,13 +43,9 @@
 
 [别求面经了！小夕手把手教你斩下NLP算法岗offer！（19.3.21更新）](https://zhuanlan.zhihu.com/p/45802662)
 
-[如何与深度学习服务器优雅的交互？（长期更新）](https://zhuanlan.zhihu.com/p/32496193)
+
 
 [如何解决90％的NLP问题：逐步指导](https://zhuanlan.zhihu.com/p/57658502)
-
-[如何到top5%？NLP文本分类和情感分析竞赛总结](https://zhuanlan.zhihu.com/p/54397748)
-
-[Kaggle Quora-如何快速进行数据分析（内容分享demo）](https://zhuanlan.zhihu.com/p/54764693)
 
 
 
@@ -127,6 +123,10 @@ TextRNN
 - [Google Colab配置记录](md/Google Colab配置记录.md)
 
 - [TPU服务  Google Cloub Platform(需要VPN)](https://console.cloud.google.com/getting-started?project=fluent-grammar-235002&cloudshell=true)
+
+深度学习服务器：[《服务器运维知识整理》](md/聊天机器人知识整理.md)
+
+- [如何与深度学习服务器优雅的交互？（长期更新）](https://zhuanlan.zhihu.com/p/32496193)
 
 
 
@@ -214,8 +214,6 @@ NER (Named Entity Recognition，命名实体识别):
 
 
 
-
-
 ### 比赛
 
 
@@ -231,8 +229,6 @@ NER (Named Entity Recognition，命名实体识别):
 [第二届搜狐内容识别算法大赛](md/搜狐第二届算法大赛.md)
 
 [2018 CCL-中移在线客服领域用户意图分类](https://github.com/nlpjoe/2018-CCL-UIIMCS)
-
-
 
 
 
