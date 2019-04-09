@@ -1,5 +1,5 @@
-## 我的 nlp 项目集合
+## nlp 项目
 
 
 
-`projects` 主要收录我做的nlp的具体小项目 
+`projects` 收录部分nlp小项目 

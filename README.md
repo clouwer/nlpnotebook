@@ -216,11 +216,9 @@ NER (Named Entity Recognition，命名实体识别):
 
 [第二届搜狐内容识别算法大赛](md/搜狐第二届算法大赛.md)
 
+[2018 CCL-中移在线客服领域用户意图分类](https://github.com/nlpjoe/2018-CCL-UIIMCS)
 
 
-### 书籍
-
-[《语言本能》读书笔记](md/语言本能读书笔记.md)
 
 
 
