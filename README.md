@@ -8,8 +8,6 @@
 
 ### 未消化完的学习资料
 
-[NLP中的词向量对比](md/NLP中的词向量对比.md)
-
 [Data Science Challenge / Competition Deadlines](https://github.com/iphysresearch/DataSciComp)
 
 [Kaggle Past Solutions](http://ndres.me/kaggle-past-solutions/)
