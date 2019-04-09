@@ -79,48 +79,22 @@
 
 ##### 机器学习方法
 
-LogisticRegression
-
-LinearSVC
-
-LightGbm
+LogisticRegression，LinearSVC，LightGbm……
 
 
 
 ##### 深度学习方法
 
-Attention
-
-AttentionRNN
-
-Capsule
-
-Convlstm
-
-Dpcnn
-
-Lstmgru
-
-RCNN
-
-SimpleCNN
-
-SnapshotCallback
-
-TextCNN
-
-TextRNN
+Attention，AttentionRNN，Capsule，Convlstm，Dpcnn，Lstmgru，RCNN，SimpleCNN，SnapshotCallback，TextCNN，TextRNN……
 
 
 
 ### 环境搭建
 
-[Google Colab使用Tips](https://blog.csdn.net/weixin_42441790/article/details/86748345)
+Google Colab: [《Google Colab配置记录》](md/Google Colab配置记录.md)
 
 - [Google Colab网址](https://colab.research.google.com/notebooks/welcome.ipynb)
-- [Google Colab配置记录](md/Google Colab配置记录.md)
-
-- [TPU服务  Google Cloub Platform(需要VPN)](https://console.cloud.google.com/getting-started?project=fluent-grammar-235002&cloudshell=true)
+- [Google Colab使用Tips](https://blog.csdn.net/weixin_42441790/article/details/86748345)
 
 深度学习服务器：[《服务器运维知识整理》](md/聊天机器人知识整理.md)
 
@@ -139,8 +113,6 @@ TextRNN
 [OpenKG.CN: 开放的中文知识图谱](http://www.openkg.cn/)
 
 [自然语言处理 怎么获得数据集 中文语料集？](https://blog.csdn.net/u012052268/article/details/78035272)
-
-
 
 
 
