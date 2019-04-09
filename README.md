@@ -91,7 +91,7 @@ Attention，AttentionRNN，Capsule，Convlstm，Dpcnn，Lstmgru，RCNN，SimpleC
 
 ### 环境搭建
 
-Google Colab: [《Google Colab配置记录》](md/Google Colab配置记录.md)
+Google Colab:   [《Google Colab配置记录》](md/Google Colab配置记录.md)
 
 - [Google Colab网址](https://colab.research.google.com/notebooks/welcome.ipynb)
 - [Google Colab使用Tips](https://blog.csdn.net/weixin_42441790/article/details/86748345)
