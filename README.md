@@ -2,9 +2,11 @@
 
 我的NLP学习进展
 
+如何设计出一个更work的task-specific的网络？
 
 
-### 学习资料
+
+### 未消化完的学习资料
 
 [NLP中的词向量对比](md/NLP中的词向量对比.md)
 
@@ -42,8 +44,6 @@
 [蚂蚁金融NLP竞赛——文本语义相似度赛题总结](https://zhuanlan.zhihu.com/p/51675979)
 
 [别求面经了！小夕手把手教你斩下NLP算法岗offer！（19.3.21更新）](https://zhuanlan.zhihu.com/p/45802662)
-
-
 
 [如何解决90％的NLP问题：逐步指导](https://zhuanlan.zhihu.com/p/57658502)
 
@@ -165,6 +165,14 @@ BERT团队预训练好的[BERT-base Chinese](https://storage.googleapis.com/bert
 - [BERT](https://github.com/google-research/bert)
 - [干货 | BERT fine-tune 终极实践教程](https://www.jianshu.com/p/aa2eff7ec5c1)
 - [【NLP】BERT中文实战踩坑](https://zhuanlan.zhihu.com/p/51762599)
+
+
+
+### 技术专题
+
+文本表示：[《文本表示知识整理》](md/文本表示知识整理.md)
+
+
 
 
 
