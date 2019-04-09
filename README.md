@@ -49,6 +49,8 @@
 
 [如何到top5%？NLP文本分类和情感分析竞赛总结](https://zhuanlan.zhihu.com/p/54397748)
 
+[Kaggle Quora-如何快速进行数据分析（内容分享demo）](https://zhuanlan.zhihu.com/p/54764693)
+
 
 
 ### NLP任务总结
@@ -186,6 +188,10 @@ BERT团队预训练好的[BERT-base Chinese](https://storage.googleapis.com/bert
 
 ### 问题细分
 
+不同细分问题间存在交集，比如部分意图识别和情感分析问题也可归为文本分类问题来解决
+
+
+
 NER (Named Entity Recognition，命名实体识别):
 
 - [命名实体识别（NER）的二三事](https://www.sohu.com/a/148858736_500659)
@@ -195,10 +201,18 @@ NER (Named Entity Recognition，命名实体识别):
 - [达观数据：一文详解深度学习在命名实体识别(NER)中的应用](https://www.jiqizhixin.com/articles/2018-08-31-2)
 - [神圣的NLP！一文理解词性标注、依存分析和命名实体识别任务](https://zhuanlan.zhihu.com/p/42721891)
 
+
+
 意图识别：[《意图识别知识整理》](md/意图识别知识整理.md)
 
 - [NLP系列学习：意图识别](https://zhuanlan.zhihu.com/p/41944121)
 - [基于fastText的意图识别框架](https://zhuanlan.zhihu.com/p/53297108)
+
+
+
+文本分类：[《文本分类知识整理》](md/文本分类知识整理.md)
+
+
 
 
 
