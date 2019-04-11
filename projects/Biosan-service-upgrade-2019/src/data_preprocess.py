@@ -11,6 +11,7 @@ import jieba
 from jieba import analyse
 import re
 from tqdm import tqdm
+from sqlalchemy import create_engine
 from config import Config
 import os
 
@@ -187,6 +188,7 @@ def data_preprocess(data_):
     data['问题汇总'] = text_concat(data, 85, '问题汇总1', '实际问题描述')
     data['解决方案汇总'] = text_concat(data, 85, '服务报告','解决方案')
 
+    engine = create_engine('mysql+pymysql://%s:%s@%s:3306/%s?charset=utf8' %(config.sql_user, config.sql_password, config.sql_ip, config.sql_database),echo = False)
     data[['服务单号', '客户名称', '客户类型', '紧急程度', '问题发现日期', '分配工程师', 
       '设备编号', '设备型号','服务工时(小时)', '服务间隔天数', '上次维修时间',
       '装机日期', '维修服务内容', '问题汇总', '解决方案汇总']].to_sql('etl_data', engine, if_exists='replace',index= False)
