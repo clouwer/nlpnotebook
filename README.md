@@ -120,6 +120,8 @@ Google Colab:   [《Google Colab配置记录》](md/Google Colab配置记录.md)
 
 [用re.sub做文本预处理](https://blog.csdn.net/johline/article/details/78802381)
 
+文本去重：[《文本去重方法知识整理》](md/文本去重方法知识整理.md)
+
 [NLP可视化: 用Python生成词云](https://zhuanlan.zhihu.com/p/23453890)
 
 - [词云库wordcloud中文乱码解决办法](https://blog.csdn.net/Dick633/article/details/80261233)
