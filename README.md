@@ -45,6 +45,14 @@
 
 [如何解决90％的NLP问题：逐步指导](https://zhuanlan.zhihu.com/p/57658502)
 
+[NLP 教程：词性标注、依存分析和命名实体识别解析与应用](https://ai.yanxishe.com/page/TextTranslation/848)
+
+**[语音语义字幕组](https://ai.yanxishe.com/page/translateGroup/6)**
+
+[词性标注](http://www.hankcs.com/nlp/part-of-speech-tagging.html)
+
+NLP工具包大全 ：https://github.com/fighting41love/funNLP
+
 
 
 ### NLP任务总结
@@ -120,6 +128,8 @@ Google Colab:   [《Google Colab配置记录》](md/Google Colab配置记录.md)
 
 [用re.sub做文本预处理](https://blog.csdn.net/johline/article/details/78802381)
 
+jieba：[《jieba知识整理》](md/jieba知识整理.md)
+
 文本去重：[《文本去重方法知识整理》](md/文本去重方法知识整理.md)
 
 [NLP可视化: 用Python生成词云](https://zhuanlan.zhihu.com/p/23453890)
@@ -143,8 +153,6 @@ BERT团队预训练好的[BERT-base Chinese](https://storage.googleapis.com/bert
 ### 技术专题
 
 文本表示：[《文本表示知识整理》](md/文本表示知识整理.md)
-
-
 
 
 
@@ -211,4 +219,10 @@ NER (Named Entity Recognition，命名实体识别):
 [2018 CCL-中移在线客服领域用户意图分类](https://github.com/nlpjoe/2018-CCL-UIIMCS)
 
 
+
+### nlp个人项目页
+
+#### 进行中的
+
+[Biosan维修部维护效率提升项目](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/Biosan-service-upgrade-2019)
 
