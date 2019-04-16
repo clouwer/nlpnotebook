@@ -51,11 +51,13 @@
 
 [词性标注](http://www.hankcs.com/nlp/part-of-speech-tagging.html)
 
-NLP工具包大全 ：https://github.com/fighting41love/funNLP
+
 
 [利用Python实现中文文本关键词抽取的三种方法](https://github.com/AimeeLee77/keyword_extraction)
 
 [以 gensim 訓練中文詞向量](https://zake7749.github.io/2016/08/28/word2vec-with-gensim/)
+
+[SnowNLP: Simplified Chinese Text Processing](https://github.com/isnowfy/snownlp)
 
 
 
@@ -111,6 +113,24 @@ Google Colab:   [《Google Colab配置记录》](md/Google Colab配置记录.md)
 深度学习服务器：[《服务器运维知识整理》](md/聊天机器人知识整理.md)
 
 - [如何与深度学习服务器优雅的交互？（长期更新）](https://zhuanlan.zhihu.com/p/32496193)
+
+
+
+### Github库
+
+[Information-Extraction-Chinese](https://github.com/crownpku/Information-Extraction-Chinese)： 中文实体识别与关系提取
+
+[SnowNLP: Simplified Chinese Text Processing](https://github.com/isnowfy/snownlp)
+
+NLP工具包大全 ：https://github.com/fighting41love/funNLP
+
+ChineseNER：https://github.com/zjy-ucas/ChineseNER
+
+算法/深度学习/NLP面试笔记：https://github.com/imhuay/Algorithm_Interview_Notes-Chinese
+
+NLP-BERT 谷歌自然语言处理模型：BERT-基于pytorch：https://github.com/Y1ran/NLP-BERT--ChineseVersion
+
+text_classification：https://github.com/brightmart/text_classification
 
 
 
