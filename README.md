@@ -53,6 +53,10 @@
 
 NLP工具包大全 ：https://github.com/fighting41love/funNLP
 
+[利用Python实现中文文本关键词抽取的三种方法](https://github.com/AimeeLee77/keyword_extraction)
+
+[以 gensim 訓練中文詞向量](https://zake7749.github.io/2016/08/28/word2vec-with-gensim/)
+
 
 
 ### NLP任务总结
@@ -129,6 +133,8 @@ Google Colab:   [《Google Colab配置记录》](md/Google Colab配置记录.md)
 [用re.sub做文本预处理](https://blog.csdn.net/johline/article/details/78802381)
 
 jieba：[《jieba知识整理》](md/jieba知识整理.md)
+
+word2vec: [《word2vec知识整理》](md/word2vec知识整理.md)
 
 文本去重：[《文本去重方法知识整理》](md/文本去重方法知识整理.md)
 

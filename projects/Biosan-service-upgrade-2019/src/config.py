@@ -18,7 +18,21 @@ class Config(object):
 		self.sql_ip = '172.16.0.164'
 		self.sql_database = 'service_upgrade_xr'
 
+		self.userdict_file = '../source/words/problem.txt'
+		self.seg_senquence_file = '../source/words/jieba_result.txt'
+
 		self.savemodel_path = '../source/model/'
 		os.makedirs(self.savemodel_path, exist_ok=True)
-		self.EMBED_SIZE = 100
-		self.w2v_file = '../source/model/word2vec.{}d.mfreq5.model'.format(self.EMBED_SIZE)
+		self.embed_size = 300
+		self.window_size = 10
+		self.w2v_file = '../source/model/word2vec.{}d.wsize{}.model'.format(self.embed_size, self.window_size)
+
+		self.savenlp_path = '../source/words/'
+		os.makedirs(self.savenlp_path, exist_ok=True)
+
+		self.lgb_max_params = {'colsample_bytree': 0.5,
+								 'min_child_samples': 7.347950100676255,
+								 'num_leaves': 96.09357631764188,
+								 'reg_alpha': 1.5571088120843582e-06,
+								 'reg_lambda': 1.2860202034063392e-07,
+								 'subsample': 0.5}

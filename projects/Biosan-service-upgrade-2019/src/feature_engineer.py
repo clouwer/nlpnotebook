@@ -173,6 +173,7 @@ def feature_engineer():
 	data.loc[data['已使用年限']<0, '已使用年限'] = 0
 
 	# 同类仪器对应使用年限时的平均维修次数
+	engine = create_engine('mysql+pymysql://%s:%s@%s:3306/%s?charset=utf8' %(config.sql_user, config.sql_password, config.sql_ip, config.sql_database),echo = False)
 	instrument_uniq = data.drop_duplicates(subset = '设备编号', keep = 'last')
 	data_repair = data.loc[data['维修服务内容'] == '维修', :]
 	data_repair['已使用年限_round'] = data_repair['已使用年限'].apply(lambda x: round(x))
@@ -184,6 +185,7 @@ def feature_engineer():
 	average_service_stats.loc['仪器台数'] = instrument_uniq['设备型号'].value_counts().to_dict()
 	average_service_stats = average_service_stats.T.sort_values(by = '仪器台数', ascending = False).T
 	average_service_stats.to_sql('instrument_average_service', engine, if_exists='replace',index= False)
+	data['已使用年限_round'] = data['已使用年限'].apply(lambda x: round(x))
 	average_service_stats.drop('仪器台数', axis = 0, inplace = True)
 	for col in average_service_stats.columns:
 	    average_service_stats[col] = average_service_stats[col].fillna(average_service_stats[col].median())
