@@ -15,6 +15,8 @@ from sqlalchemy import create_engine
 from config import Config
 import os
 
+jieba.load_userdict('../source/words/problem.txt')
+
 def text_clean(content):
     try:
 #         result = re.sub(r'[^\u4e00-\u9fa5,A-Za-z0-9]', " ",content)
@@ -188,10 +190,26 @@ def data_preprocess(data_):
     data['问题汇总'] = text_concat(data, 85, '问题汇总1', '实际问题描述')
     data['解决方案汇总'] = text_concat(data, 85, '服务报告','解决方案')
 
+    def find_year(x):
+        if '20' in x:
+            output = x[x.index('20'):x.index('20')+4]
+        elif '19' in x:
+            output = x[x.index('19'):x.index('19')+4]
+        else:
+            output = 'unknown'
+        return output
+
+    data['装机年份'] = data['设备编号'].apply(find_year)
+    data = data.loc[data['装机年份'] != 'unknown',:].reset_index(drop = True)
+    
+    data.loc[data['设备编号'] == 'BS-2016-WTS-TQS-01','设备编号'] = 'BS-2016-WTS-TQD-01'
+    data.loc[data['设备编号'] == 'BS-2016-WTS-TQD-01','设备型号'] = 'TQD'
+    data.loc[data['设备编号'] == 'BS-2017-NS550-01', '设备型号'] = 'Nextseq 550AR'
+    
     engine = create_engine('mysql+pymysql://%s:%s@%s:3306/%s?charset=utf8' %(config.sql_user, config.sql_password, config.sql_ip, config.sql_database),echo = False)
     data[['服务单号', '客户名称', '客户类型', '紧急程度', '问题发现日期', '分配工程师', 
-      '设备编号', '设备型号','服务工时(小时)', '服务间隔天数', '上次维修时间',
-      '装机日期', '维修服务内容', '问题汇总', '解决方案汇总']].to_sql('etl_data', engine, if_exists='replace',index= False)
+      '设备编号', '设备型号','服务工时(小时)', '服务间隔天数', '上次维修时间', 
+      '装机日期','装机年份', '维修服务内容', '问题汇总', '解决方案汇总']].to_sql('etl_data', engine, if_exists='replace',index= False)
 
 
 if __name__ == '__main__':

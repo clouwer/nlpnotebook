@@ -17,3 +17,8 @@ class Config(object):
 		self.sql_password = 'mysql123'
 		self.sql_ip = '172.16.0.164'
 		self.sql_database = 'service_upgrade_xr'
+
+		self.savemodel_path = '../source/model/'
+		os.makedirs(self.savemodel_path, exist_ok=True)
+		self.EMBED_SIZE = 100
+		self.w2v_file = '../source/model/word2vec.{}d.mfreq5.model'.format(self.EMBED_SIZE)
