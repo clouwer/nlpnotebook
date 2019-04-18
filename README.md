@@ -148,6 +148,10 @@ https://github.com/zhihao-chen/QASystemOnMedicalKG
 
 Eliyar.Blog：https://eliyar.biz/archives/
 
+Kashgari：https://github.com/BrikerMan/Kashgari
+
+bert-as-service ：https://github.com/hanxiao/bert-as-service 
+
 
 
 ### 数据集
@@ -193,22 +197,21 @@ Neo4j：知识图谱工具Py2Neo [Neo4j简介及Py2Neo的用法](https://cuiqing
 BERT：
 
 - 团队预训练好的[BERT-base Chinese](https://storage.googleapis.com/bert_models/2018_11_03/chinese_L-12_H-768_A-12.zip)模型（364.20MB）
-
 - [BERT](https://github.com/google-research/bert)
 - [干货 | BERT fine-tune 终极实践教程](https://www.jianshu.com/p/aa2eff7ec5c1)
 - [【NLP】BERT中文实战踩坑](https://zhuanlan.zhihu.com/p/51762599)
-
 - bert论文中文翻译: [link](https://github.com/yuanxiaosc/BERT_Paper_Chinese_Translation)
-
 - bert原作者的slides: [link](https://pan.baidu.com/s/1OSPsIu2oh1iJ-bcXoDZpJQ) 提取码: iarj
 - 文本分类实践: [github](https://github.com/NLPScott/bert-Chinese-classification-task)
 - bert tutorial文本分类教程: [github](https://github.com/Socialbird-AILab/BERT-Classification-Tutorial)
 - bert pytorch实现: [github](https://github.com/huggingface/pytorch-pretrained-BERT)
 - bert用于中文命名实体识别 tensorflow版本: [github](https://github.com/macanv/BERT-BiLSTM-CRF-NER)
-- BERT生成句向量，BERT做文本分类、文本相似度计算[github](https://github.com/terrifyzhao/bert-utils)
+- BERT生成句向量，BERT做文本分类、文本相似度计算[github](https://github.com/terrifyzhao/bert-utils)  [BERT完全指南](https://blog.csdn.net/u012526436/article/details/86296051)
 - bert 基于 keras 的封装分类标注框架 Kashgari，几分钟即可搭建一个分类或者序列标注模型: [github](https://github.com/BrikerMan/Kashgari)
 - bert、ELMO的图解： [github](https://jalammar.github.io/illustrated-bert/)
 - BERT: Pre-trained models and downstream applications: [github](https://github.com/asyml/texar/tree/master/examples/bert)
+- 使用BERT生成句向量：[link](https://blog.csdn.net/u012526436/article/details/87697242)
+- bert-as-service:  [github](https://github.com/hanxiao/bert-as-service )    https://zhuanlan.zhihu.com/p/50582974 
 
 
 
