@@ -114,6 +114,10 @@ Google Colab:   [《Google Colab配置记录》](md/Google Colab配置记录.md)
 
 - [如何与深度学习服务器优雅的交互？（长期更新）](https://zhuanlan.zhihu.com/p/32496193)
 
+Win10下的环境搭建：
+
+[Win10下安装Anaconda+CUDA+cudnn+TensorFlow+keras+PyTorch+Pycharm](https://www.jianshu.com/p/9f89633bad57)
+
 
 
 ### Github库
@@ -131,6 +135,18 @@ ChineseNER：https://github.com/zjy-ucas/ChineseNER
 NLP-BERT 谷歌自然语言处理模型：BERT-基于pytorch：https://github.com/Y1ran/NLP-BERT--ChineseVersion
 
 text_classification：https://github.com/brightmart/text_classification
+
+cocoNLP ： https://github.com/fighting41love/cocoNLP
+
+>  人名、地址、邮箱、手机号、手机归属地 等信息的抽取，rake短语抽取算法。
+
+Chinese Word Vectors 中文词向量：https://github.com/Embedding/Chinese-Word-Vectors
+
+基于医疗领域知识图谱的问答系统：https://github.com/zhihao-chen/QASystemOnMedicalGraph
+
+https://github.com/zhihao-chen/QASystemOnMedicalKG
+
+Eliyar.Blog：https://eliyar.biz/archives/
 
 
 
@@ -158,6 +174,10 @@ word2vec: [《word2vec知识整理》](md/word2vec知识整理.md)
 
 文本去重：[《文本去重方法知识整理》](md/文本去重方法知识整理.md)
 
+pyhanlp：https://github.com/hankcs/pyhanlp
+
+自然语言处理工具包HanLP的Python接口 <http://hanlp.hankcs.com/>
+
 [NLP可视化: 用Python生成词云](https://zhuanlan.zhihu.com/p/23453890)
 
 - [词云库wordcloud中文乱码解决办法](https://blog.csdn.net/Dick633/article/details/80261233)
@@ -168,11 +188,27 @@ word2vec: [《word2vec知识整理》](md/word2vec知识整理.md)
 - [图灵机器人官网](http://www.tuling123.com/member/robot/index.jhtml)
 - [微信图灵机器人实现](md/常用工具实现代码/tuling.py)
 
-BERT团队预训练好的[BERT-base Chinese](https://storage.googleapis.com/bert_models/2018_11_03/chinese_L-12_H-768_A-12.zip)模型（364.20MB）
+Neo4j：知识图谱工具Py2Neo [Neo4j简介及Py2Neo的用法](https://cuiqingcai.com/4778.html)
+
+BERT：
+
+- 团队预训练好的[BERT-base Chinese](https://storage.googleapis.com/bert_models/2018_11_03/chinese_L-12_H-768_A-12.zip)模型（364.20MB）
 
 - [BERT](https://github.com/google-research/bert)
 - [干货 | BERT fine-tune 终极实践教程](https://www.jianshu.com/p/aa2eff7ec5c1)
 - [【NLP】BERT中文实战踩坑](https://zhuanlan.zhihu.com/p/51762599)
+
+- bert论文中文翻译: [link](https://github.com/yuanxiaosc/BERT_Paper_Chinese_Translation)
+
+- bert原作者的slides: [link](https://pan.baidu.com/s/1OSPsIu2oh1iJ-bcXoDZpJQ) 提取码: iarj
+- 文本分类实践: [github](https://github.com/NLPScott/bert-Chinese-classification-task)
+- bert tutorial文本分类教程: [github](https://github.com/Socialbird-AILab/BERT-Classification-Tutorial)
+- bert pytorch实现: [github](https://github.com/huggingface/pytorch-pretrained-BERT)
+- bert用于中文命名实体识别 tensorflow版本: [github](https://github.com/macanv/BERT-BiLSTM-CRF-NER)
+- BERT生成句向量，BERT做文本分类、文本相似度计算[github](https://github.com/terrifyzhao/bert-utils)
+- bert 基于 keras 的封装分类标注框架 Kashgari，几分钟即可搭建一个分类或者序列标注模型: [github](https://github.com/BrikerMan/Kashgari)
+- bert、ELMO的图解： [github](https://jalammar.github.io/illustrated-bert/)
+- BERT: Pre-trained models and downstream applications: [github](https://github.com/asyml/texar/tree/master/examples/bert)
 
 
 
@@ -214,6 +250,7 @@ NER (Named Entity Recognition，命名实体识别):
 - [BERT+BiLSTM-CRF-NER用于做ner识别](https://blog.csdn.net/luoyexuge/article/details/84728649)
 - [达观数据：一文详解深度学习在命名实体识别(NER)中的应用](https://www.jiqizhixin.com/articles/2018-08-31-2)
 - [神圣的NLP！一文理解词性标注、依存分析和命名实体识别任务](https://zhuanlan.zhihu.com/p/42721891)
+- [NLP - 基于 BERT 的中文命名实体识别（NER)](https://eliyar.biz/nlp_chinese_bert_ner/)
 
 
 
@@ -225,6 +262,12 @@ NER (Named Entity Recognition，命名实体识别):
 
 
 文本分类：[《文本分类知识整理》](md/文本分类知识整理.md)
+
+自然语言生成：
+[Ehud Reiter教授的博客](https://ehudreiter.com/) 北大万小军教授强力推荐，该博客对NLG技术、评价与应用进行了深入的探讨与反思。
+[文本生成相关资源大列表](https://github.com/ChenChengKuan/awesome-text-generation)
+[自然语言生成：让机器掌握自动创作的本领 - 开放域对话生成及在微软小冰中的实践](https://drive.google.com/file/d/1Mdna3q986k6OoJNsfAHznTtnMAEVzv5z/view)
+[文本生成控制](https://github.com/harvardnlp/Talk-Latent/blob/master/main.pdf)
 
 
 
