@@ -49,8 +49,6 @@
 
 **[语音语义字幕组](https://ai.yanxishe.com/page/translateGroup/6)**
 
-[词性标注](http://www.hankcs.com/nlp/part-of-speech-tagging.html)
-
 
 
 [利用Python实现中文文本关键词抽取的三种方法](https://github.com/AimeeLee77/keyword_extraction)
@@ -154,7 +152,7 @@ bert-as-service ：https://github.com/hanxiao/bert-as-service
 
 CDCS 中国数据竞赛优胜解集锦：https://github.com/geekinglcq/CDCS
 
-HanLP：https://github.com/hankcs/pyhanlp
+HanLP：https://github.com/hankcs/pyhanlp  [词性标注](http://www.hankcs.com/nlp/part-of-speech-tagging.html)
 
 
 
@@ -325,3 +323,4 @@ NER (Named Entity Recognition，命名实体识别):
 
 [Biosan维修部维护效率提升项目](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/Biosan-service-upgrade-2019)
 
+easyNER：任务指向型端到端NER框架
