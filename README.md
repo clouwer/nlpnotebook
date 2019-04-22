@@ -152,6 +152,16 @@ Kashgari：https://github.com/BrikerMan/Kashgari
 
 bert-as-service ：https://github.com/hanxiao/bert-as-service 
 
+CDCS 中国数据竞赛优胜解集锦：https://github.com/geekinglcq/CDCS
+
+HanLP：https://github.com/hankcs/pyhanlp
+
+
+
+### Blog
+
+刘焕勇：https://liuhuanyong.github.io/
+
 
 
 ### 数据集
@@ -165,6 +175,14 @@ bert-as-service ：https://github.com/hanxiao/bert-as-service
 [OpenKG.CN: 开放的中文知识图谱](http://www.openkg.cn/)
 
 [自然语言处理 怎么获得数据集 中文语料集？](https://blog.csdn.net/u012052268/article/details/78035272)
+
+NER中文语料：https://github.com/yaleimeng/NER_corpus_chinese
+
+CCKS2017电子病历实体标注：https://github.com/liuhuanyong/MedicalNamedEntityRecognition
+
+100+ Chinese Word Vectors 上百种预训练中文词向量：https://github.com/Embedding/Chinese-Word-Vectors
+
+天池瑞金知识图谱：https://github.com/ZhengZixiang/tianchi_ruijin_knowledge_graph
 
 
 
@@ -205,13 +223,15 @@ BERT：
 - 文本分类实践: [github](https://github.com/NLPScott/bert-Chinese-classification-task)
 - bert tutorial文本分类教程: [github](https://github.com/Socialbird-AILab/BERT-Classification-Tutorial)
 - bert pytorch实现: [github](https://github.com/huggingface/pytorch-pretrained-BERT)
-- bert用于中文命名实体识别 tensorflow版本: [github](https://github.com/macanv/BERT-BiLSTM-CRF-NER)
+- bert用于中文命名实体识别 tensorflow版本: [github](https://github.com/macanv/BERT-BiLSTM-CRF-NER) [说明文档](https://blog.csdn.net/macanv/article/details/85684284)
+- 使用预训练语言模型BERT做中文NER：[github](https://github.com/ProHiryu/bert-chinese-ner)
 - BERT生成句向量，BERT做文本分类、文本相似度计算[github](https://github.com/terrifyzhao/bert-utils)  [BERT完全指南](https://blog.csdn.net/u012526436/article/details/86296051)
 - bert 基于 keras 的封装分类标注框架 Kashgari，几分钟即可搭建一个分类或者序列标注模型: [github](https://github.com/BrikerMan/Kashgari)
 - bert、ELMO的图解： [github](https://jalammar.github.io/illustrated-bert/)
 - BERT: Pre-trained models and downstream applications: [github](https://github.com/asyml/texar/tree/master/examples/bert)
 - 使用BERT生成句向量：[link](https://blog.csdn.net/u012526436/article/details/87697242)
 - bert-as-service:  [github](https://github.com/hanxiao/bert-as-service )    https://zhuanlan.zhihu.com/p/50582974 
+- 用BERT进行序列标记和文本分类的模板代码：[github](https://github.com/yuanxiaosc/BERT-for-Sequence-Labeling-and-Text-Classification)
 
 
 
@@ -247,6 +267,10 @@ BERT：
 
 NER (Named Entity Recognition，命名实体识别):
 
+- Stanford NLP
+
+- [CRF：条件随机场](https://www.cnblogs.com/Determined22/p/6915730.html)
+
 - [命名实体识别（NER）的二三事](https://www.sohu.com/a/148858736_500659)
 - [达观数据：如何打造一个中文NER系统](http://zhuanlan.51cto.com/art/201705/540693.htm)
 - [Google Colab实战-基于Google BERT的中文命名实体识别（NER）](https://blog.csdn.net/weixin_42441790/article/details/86751031)
@@ -254,6 +278,9 @@ NER (Named Entity Recognition，命名实体识别):
 - [达观数据：一文详解深度学习在命名实体识别(NER)中的应用](https://www.jiqizhixin.com/articles/2018-08-31-2)
 - [神圣的NLP！一文理解词性标注、依存分析和命名实体识别任务](https://zhuanlan.zhihu.com/p/42721891)
 - [NLP - 基于 BERT 的中文命名实体识别（NER)](https://eliyar.biz/nlp_chinese_bert_ner/)
+- zh-NER-TF : [github](https://github.com/Determined22/zh-NER-TF)     [说明文档](https://www.cnblogs.com/Determined22/p/7238342.html)
+- ChineseNER：[github](https://github.com/zjy-ucas/ChineseNER)
+- ccks2017：[github](https://github.com/liuhuanyong/MedicalNamedEntityRecognition)
 
 
 
