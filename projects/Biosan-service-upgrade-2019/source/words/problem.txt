@@ -1,14 +1,14 @@
-foam报错 n
+foam
 孵育器
 不畅
 Sm值
 hcg
 发报告
 打孔头
-联想C30 3 n
+联想C30
 加样臂 
 机械臂
-pump or conveyor error
+pumporconveyorerror
 加样平台
 样本架
 条码
@@ -28,16 +28,13 @@ pump or conveyor error
 注射器
 clot
 液面传感器
-foamFoam报错
-carryover测试 
-洗板机模块
+foamFoam
+carryover
 洗板机
 洗板 
-去血片模块
+去血片
 血片头 
-增强液模块
-增强液 
-加样模块
+增强液
 试剂仓
 稀释杯
 白帽子
@@ -55,29 +52,25 @@ pipettesteperror
 掉帽
 触底 
 读码器
-读码器
 条码
 读码 
-电梯模块
 电梯
 孵育仓
 弹簧挂钩
-lift无法取到板
 振荡孵育器
 板框
-震荡孵育模块
+震荡孵育
 弹簧
 检测模块
 滤光片
 filtererror
-实验结果偏低
-背景值偏高
+实验结果
+背景值
 钐
 荧光值 
 Xconv模块
 x-conv
 XCONV
-退板失败
 退板 
 电路
 Hexloaderroratnode21
@@ -96,7 +89,6 @@ Hexloaderroratnode21
 正压 
 1235温控
 风扇
-温度过高
 温控风扇
 风扇 
 电脑及软件模块
@@ -182,7 +174,6 @@ Y方向
 噪音大
 老仪器
 洗板机
-一根针
 Z轴
 电机故障
 制冷风扇
@@ -300,3 +291,16 @@ CDS-5
 up-down
 tip in air
 XCONV gray error
+FLASH
+clot
+洗板机
+注水
+Eu定标液
+上机
+无水酒精
+F点
+摄像头
+washertest
+MeasurementModuleTest
+HighVolumePipetteTest
+LowVolumePipetteTest
