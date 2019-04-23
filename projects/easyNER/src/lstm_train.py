@@ -18,6 +18,7 @@ class LSTMNER:
         self.train_path = os.path.join(cur, '../source/data/ner_data/ner_train.txt')
         self.vocab_path = os.path.join(cur, 'model/vocab.txt')
         self.embedding_file = os.path.join(cur, 'model/token_vec_300.bin')
+        # self.embedding_file = os.path.join(cur, 'model/sgns.baidubaike.bigram-char')
         self.model_path = os.path.join(cur, 'model/tokenvec_bilstm2_crf_model_20.h5')
         self.datas, self.word_dict = self.build_data()
         self.class_dict ={
