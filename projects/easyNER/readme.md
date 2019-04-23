@@ -63,33 +63,110 @@ for root,dirs,files in os.walk(config.origin_datapath):
     for file in files:
         filepath = os.path.join(root, file)    
         res_dict = {}
-        for text in open(filepath, encoding = 'UTF-8'):     
-            sg_word = sorted([word for word in ner_pos.keys() if word in a],key = lambda i:len(i),reverse=False)
-            sg_words = []
-            for word in sg_word:
-                sg_words = sg_words + [word] * text.count(word)
-            sg_nature = [ner_pos[word] for word in sg_words]
-            words_begin = []; words_end = []
-            for word in sg_word:
-                words_begin = words_begin + [m.start() for m in re.finditer(word, text)]
-                words_end = words_end + [m.end()-1 for m in re.finditer(word, text)]
-            res_dict = {}
-            for w in range(len(sg_words)):
-                res = sg_words[w]
-                start = words_begin[w]
-                end = words_end[w]
-                label = config.label_dict[sg_nature[w]]
-                for i in range(start, end+1):
-                    if i == start:
-                        label_cate = 'B-' + label
-                    else:
-                        label_cate = 'I-' + label
-                    res_dict[i] = label_cate
-            for indx, char in enumerate(text):
-                char_label = res_dict.get(indx, 'O')
-                f.write(char + '\t' + char_label + '\n')
+        text = re.sub('\n', '', open(filepath, encoding = 'UTF-8').read())
+        sg_word = sorted([word for word in ner_pos.keys() if word in text],key = lambda i:len(i),reverse=False)
+        sg_words = []
+        for word in sg_word:
+            sg_words = sg_words + [word] * text.count(word)
+        sg_nature = [ner_pos[word] for word in sg_words]
+        words_begin = []; words_end = []
+        for word in sg_word:
+            if word in ['胸部正位+左斜位片','A+B']:
+                word = word[:word.index('+')] + '\\'+ word[word.index('+'):]
+            words_begin = words_begin + [m.start() for m in re.finditer(word, text)]
+            words_end = words_end + [m.end()-1 for m in re.finditer(word, text)]
+        res_dict = {}
+        for w in range(len(sg_words)):
+            res = sg_words[w]
+            start = words_begin[w]
+            end = words_end[w]
+            label = config.label_dict[sg_nature[w]]
+            for i in range(start, end+1):
+                if i == start:
+                    label_cate = 'B-' + label
+                else:
+                    label_cate = 'I-' + label
+                res_dict[i] = label_cate
+        for indx, char in enumerate(text):
+            char_label = res_dict.get(indx, 'O')
+            f.write(char + '\t' + char_label + '\n')
 f.close()
 ```
 
 [训练数据集](source/data/ner_data/ner_train.txt)生成在`source/data/ner_data/ner_train.txt` 
 
+```python
+# 正则化找不到带+号的文本
+re.finditer('胸部正位+左斜位片', text)
+```
+
+
+
+### 模型训练
+
+NER部分采用当前state-of-the-art对应的BiLSTM+CRF方案和BERT方案
+
+#### BiLSTM+CRF
+
+运行`src/lstm_train.py` ，模型保存在 `src/model` 目录下
+
+```shell
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+embedding_1 (Embedding)      (None, 150, 300)          527700
+_________________________________________________________________
+bidirectional_1 (Bidirection (None, 150, 256)          439296
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 150, 256)          0
+_________________________________________________________________
+bidirectional_2 (Bidirection (None, 150, 128)          164352
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 150, 128)          0
+_________________________________________________________________
+time_distributed_1 (TimeDist (None, 150, 11)           1419
+_________________________________________________________________
+crf_1 (CRF)                  (None, 150, 11)           275
+=================================================================
+Total params: 1,133,042
+Trainable params: 605,342
+Non-trainable params: 527,700
+_________________________________________________________________
+Train on 6268 samples, validate on 1568 samples
+Epoch 1/8
+6268/6268 [==============================] - 69s 11ms/step - loss: 18.5580 - crf_viterbi_accuracy: 0.6915 - val_loss: 15.8169 - val_crf_viterbi_accuracy: 0.7778
+Epoch 2/8
+6268/6268 [==============================] - 66s 10ms/step - loss: 17.8016 - crf_viterbi_accuracy: 0.9259 - val_loss: 15.5995 - val_crf_viterbi_accuracy: 0.8267
+Epoch 3/8
+6268/6268 [==============================] - 65s 10ms/step - loss: 17.6863 - crf_viterbi_accuracy: 0.9601 - val_loss: 15.5239 - val_crf_viterbi_accuracy: 0.8432
+Epoch 4/8
+6268/6268 [==============================] - 66s 11ms/step - loss: 17.6465 - crf_viterbi_accuracy: 0.9720 - val_loss: 15.4771 - val_crf_viterbi_accuracy: 0.8546
+Epoch 5/8
+6268/6268 [==============================] - 71s 11ms/step - loss: 17.6257 - crf_viterbi_accuracy: 0.9783 - val_loss: 15.4423 - val_crf_viterbi_accuracy: 0.8657
+Epoch 6/8
+6268/6268 [==============================] - 72s 12ms/step - loss: 17.6131 - crf_viterbi_accuracy: 0.9824 - val_loss: 15.4186 - val_crf_viterbi_accuracy: 0.8724
+Epoch 7/8
+6268/6268 [==============================] - 149s 24ms/step - loss: 17.6047 - crf_viterbi_accuracy: 0.9858 - val_loss: 15.4104 - val_crf_viterbi_accuracy: 0.8767
+Epoch 8/8
+6268/6268 [==============================] - 68s 11ms/step - loss: 17.5979 - crf_viterbi_accuracy: 0.9879 - val_loss: 15.4195 - val_crf_viterbi_accuracy: 0.8797
+```
+
+模型设置input_length = 150，所以预测之前要把长文本打散成150字以下的短句。
+
+
+
+##### 输出结果
+
+```
+[('伤', 'O'), ('后', 'O'), ('患', 'O'), ('者', 'O'), ('自', 'O'), ('感', 'O'), ('伤', 'O'), ('处', 'O'), ('疼', 'B-SIGNS'), ('痛', 'I-SIGNS'), ('，', 'O'), ('呼', 'O'), ('我', 'O'), ('院', 'O'), ('1', 'O'), ('2', 'O'), ('0', 'O'), ('接', 'O'), ('来', 'O'), ('我', 'O'), ('院', 'O'), ('，', 'O'), ('查', 'O'), ('左', 'B-CHECK'), ('髋', 'I-CHECK'), ('部', 'I-CHECK'), ('X', 'I-CHECK'), ('光', 'I-CHECK'), ('片', 'I-CHECK'), ('示', 'O'), ('：', 'O'), ('左', 'B-BODY'), ('侧', 'I-BODY'), ('粗', 'I-DISEASE'), ('隆', 'I-DISEASE'), ('间', 'I-DISEASE'), ('骨', 'I-DISEASE'), ('折', 'I-DISEASE'), ('。', 'O'), ('给', 'O'), ('予', 'O'), ('补', 'O'), ('液', 'O'), ('等', 'O'), ('对', 'O'), ('症', 'O'), ('治', 'O'), ('疗', 'O'), ('。', 'O'), ('患', 'O'), ('者', 'O'), ('病', 'O'), ('情', 'O'), ('平', 'O'), ('稳', 'O'), ('，', 'O'), ('以', 'O'), ('左', 'B-DISEASE'), ('侧', 'I-DISEASE'), ('粗', 'I-DISEASE'), ('隆', 'I-DISEASE'), ('间', 'I-DISEASE'), ('骨', 'I-DISEASE'), ('折', 'I-DISEASE'), ('介', 'O'), ('绍', 'O'), ('入', 'O'), ('院', 'O'), (' 。', 'O')]
+```
+
+
+
+## References
+
+https://github.com/liuhuanyong/MedicalNamedEntityRecognition
+
+https://github.com/Hironsan/anago
+
+https://github.com/liuhuanyong/ChineseHumorSentiment

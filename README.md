@@ -160,6 +160,8 @@ HanLP：https://github.com/hankcs/pyhanlp  [词性标注](http://www.hankcs.com/
 
 刘焕勇：https://liuhuanyong.github.io/
 
+Machine Learning Mastery 博客文章翻译：https://github.com/apachecn/ml-mastery-zh
+
 
 
 ### 数据集
@@ -323,4 +325,5 @@ NER (Named Entity Recognition，命名实体识别):
 
 [Biosan维修部维护效率提升项目](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/Biosan-service-upgrade-2019)
 
-easyNER：任务指向型端到端NER框架
+[easyNER](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/easyNER)：任务指向型端到端NER框架
+
