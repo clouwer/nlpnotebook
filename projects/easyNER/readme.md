@@ -102,6 +102,10 @@ re.finditer('胸部正位+左斜位片', text)
 
 
 
+> 中文NER训练数据集的样本量不是由数据文本条数决定的，是有句子数量决定的，句子划分标识为['。','?','!','！','？']
+
+
+
 ### 模型训练
 
 NER部分采用当前state-of-the-art对应的BiLSTM+CRF方案和BERT方案
@@ -165,6 +169,46 @@ Epoch 8/8
 
 
 
+#### BERT
+
+bert部分暂时实现调用已有的Kashgari包
+
+与BiLSTM-CRF GPU占用36%相比，Fine-Tune BERT时GPU占用轻松达到100%
+
+```
+Tue Apr 23 17:27:46 2019
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 385.54                 Driver Version: 385.54                    |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name            TCC/WDDM | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  GeForce GTX 1070   WDDM  | 00000000:01:00.0  On |                  N/A |
+| N/A   75C    P2   118W /  N/A |   7112MiB /  8192MiB |     99%      Default |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
+|    0      1384    C+G   Insufficient Permissions                   N/A      |
+|    0      8584    C+G   C:\Windows\explorer.exe                    N/A      |
+|    0      8828    C+G   ...hell.Experiences.TextInput.InputApp.exe N/A      |
+|    0      9460    C+G   ...t_cw5n1h2txyewy\ShellExperienceHost.exe N/A      |
+|    0      9808    C+G   ...dows.Cortana_cw5n1h2txyewy\SearchUI.exe N/A      |
+|    0     10604    C+G   ...42.60.0_x64__kzf8qxf38zg5c\SkypeApp.exe N/A      |
+|    0     13008      C   C:\Users\kenshinpg\Anaconda3\python.exe    N/A      |
+|    0     13612    C+G   D:\Typora\Typora.exe                       N/A      |
+|    0     14612    C+G   D:\软件\360se6\Application\360se.exe       N/A      |
++-----------------------------------------------------------------------------+
+```
+
+
+
+
+
+
+
 ## References
 
 https://github.com/liuhuanyong/MedicalNamedEntityRecognition
@@ -172,3 +216,5 @@ https://github.com/liuhuanyong/MedicalNamedEntityRecognition
 https://github.com/Hironsan/anago
 
 https://github.com/liuhuanyong/ChineseHumorSentiment
+
+https://github.com/BrikerMan/Kashgari

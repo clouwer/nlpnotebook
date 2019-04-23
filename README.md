@@ -184,6 +184,8 @@ CCKS2017电子病历实体标注：https://github.com/liuhuanyong/MedicalNamedEn
 
 天池瑞金知识图谱：https://github.com/ZhengZixiang/tianchi_ruijin_knowledge_graph
 
+ChineseNLPCorpus：https://github.com/liuhuanyong/ChineseNLPCorpus
+
 
 
 ### 常用工具
