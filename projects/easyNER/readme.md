@@ -20,17 +20,31 @@
 
 #### POS标签
 
-```
-右髋部	身体部位
-疼痛	症状和体征
-肿胀	症状和体征
-鼻部	身体部位
-面部	身体部位
-痛	症状和体征
-腰部	身体部位
-头晕	症状和体征
-上腹部	身体部位
-腰背部	身体部位
+##### 目标序列标记
+
+- O非实体部分
+- TREATMENT治疗方式,
+- BODY身体部位,
+- SIGN疾病症状,
+- CHECK医学检查, 
+- DISEASE疾病实体,
+
+##### 序列标记方法：采用BIO三元标记
+
+```python
+class_dict ={
+    'O':0,
+    'B-TREATMENT': 1,
+    'I-TREATMENT': 2,
+    'B-BODY': 3,
+    'I-BODY': 4,
+    'B-SIGNS': 5,
+    'I-SIGNS': 6,
+    'B-CHECK': 7,
+    'I-CHECK': 8,
+    'B-DISEASE': 9,
+    'I-DISEASE': 10
+}
 ```
 
 pos标签由人工标注，针对原始数据`txtoriginal`，列出其中我们感兴趣的部分，也是NER的目标。

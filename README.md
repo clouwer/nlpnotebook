@@ -8,11 +8,7 @@
 
 ### 未消化完的学习资料
 
-[Data Science Challenge / Competition Deadlines](https://github.com/iphysresearch/DataSciComp)
 
-[Kaggle Past Solutions](http://ndres.me/kaggle-past-solutions/)
-
-[Data competition Top Solution 数据竞赛Top解决方案开源整理](https://github.com/Smilexuhc/Data-Competition-TopSolution)
 
 [文本关键词提取算法总结和Python实现](https://zhuanlan.zhihu.com/p/49049482)
 
@@ -32,8 +28,6 @@
 
 [NLP自然语言处理从入门到迷茫](https://zhuanlan.zhihu.com/p/32951278)
 
-[word2vec前世今生](https://www.cnblogs.com/iloveai/p/word2vec.html)
-
 [学术派整理,一份从基础到实战的 NLP 学习清单~](https://zhuanlan.zhihu.com/p/58687602)
 
 [自然语言处理是如何工作的？一步步教你构建 NLP 流水线
@@ -48,8 +42,6 @@
 [NLP 教程：词性标注、依存分析和命名实体识别解析与应用](https://ai.yanxishe.com/page/TextTranslation/848)
 
 **[语音语义字幕组](https://ai.yanxishe.com/page/translateGroup/6)**
-
-
 
 [利用Python实现中文文本关键词抽取的三种方法](https://github.com/AimeeLee77/keyword_extraction)
 
@@ -190,24 +182,28 @@ ChineseNLPCorpus：https://github.com/liuhuanyong/ChineseNLPCorpus
 
 ### 常用工具
 
-[用re.sub做文本预处理](https://blog.csdn.net/johline/article/details/78802381)
+re： [用re.sub做文本预处理](https://blog.csdn.net/johline/article/details/78802381)
 
 jieba：[《jieba知识整理》](md/jieba知识整理.md)
 
 word2vec: [《word2vec知识整理》](md/word2vec知识整理.md)
 
+- [word2vec前世今生](https://www.cnblogs.com/iloveai/p/word2vec.html)
+
 文本去重：[《文本去重方法知识整理》](md/文本去重方法知识整理.md)
 
 pyhanlp：https://github.com/hankcs/pyhanlp
 
-自然语言处理工具包HanLP的Python接口 <http://hanlp.hankcs.com/>
+词云：
 
-[NLP可视化: 用Python生成词云](https://zhuanlan.zhihu.com/p/23453890)
+- [NLP可视化: 用Python生成词云](https://zhuanlan.zhihu.com/p/23453890)
 
 - [词云库wordcloud中文乱码解决办法](https://blog.csdn.net/Dick633/article/details/80261233)
 - [简单TFIDF词云实现代码](md/常用工具实现代码/word_cloud.md)
 
-[Python微信库:itchat的用法详解](http://www.php.cn/python-tutorials-394725.html)
+itchat：
+
+- [itchat的用法详解](http://www.php.cn/python-tutorials-394725.html)
 
 - [图灵机器人官网](http://www.tuling123.com/member/robot/index.jhtml)
 - [微信图灵机器人实现](md/常用工具实现代码/tuling.py)
@@ -295,25 +291,30 @@ NER (Named Entity Recognition，命名实体识别):
 
 文本分类：[《文本分类知识整理》](md/文本分类知识整理.md)
 
-自然语言生成：
-[Ehud Reiter教授的博客](https://ehudreiter.com/) 北大万小军教授强力推荐，该博客对NLG技术、评价与应用进行了深入的探讨与反思。
-[文本生成相关资源大列表](https://github.com/ChenChengKuan/awesome-text-generation)
-[自然语言生成：让机器掌握自动创作的本领 - 开放域对话生成及在微软小冰中的实践](https://drive.google.com/file/d/1Mdna3q986k6OoJNsfAHznTtnMAEVzv5z/view)
-[文本生成控制](https://github.com/harvardnlp/Talk-Latent/blob/master/main.pdf)
+
+
+自然语言生成NLG：
+
+- [Ehud Reiter教授的博客](https://ehudreiter.com/) 北大万小军教授强力推荐，该博客对NLG技术、评价与应用进行了深入的探讨与反思。
+- [文本生成相关资源大列表](https://github.com/ChenChengKuan/awesome-text-generation)
+- [自然语言生成：让机器掌握自动创作的本领 - 开放域对话生成及在微软小冰中的实践](https://drive.google.com/file/d/1Mdna3q986k6OoJNsfAHznTtnMAEVzv5z/view)
+- [文本生成控制](https://github.com/harvardnlp/Talk-Latent/blob/master/main.pdf)
 
 
 
 ### 比赛
 
+#### 优秀方案
 
+[Data Science Challenge / Competition Deadlines](https://github.com/iphysresearch/DataSciComp)
 
-#### 脱敏数据
+[Kaggle Past Solutions](http://ndres.me/kaggle-past-solutions/)
+
+[Data competition Top Solution 数据竞赛Top解决方案开源整理](https://github.com/Smilexuhc/Data-Competition-TopSolution)
+
+#### 比赛总结
 
 [“达观杯”文本智能处理挑战赛](md/达观文本智能处理挑战.md)
-
-
-
-#### 非脱敏数据
 
 [第二届搜狐内容识别算法大赛](md/搜狐第二届算法大赛.md)
 
@@ -321,11 +322,12 @@ NER (Named Entity Recognition，命名实体识别):
 
 
 
-### nlp个人项目页
+### NLP项目列表
 
-#### 进行中的
+| 项目名称                                                     | 中文名称                     | 项目技术点         | 状态   |
+| ------------------------------------------------------------ | ---------------------------- | ------------------ | ------ |
+| [Biosan-service-upgrade-2019](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/Biosan-service-upgrade-2019) | Biosan维修部维护效率提升项目 | 机器学习，文本挖掘 | 进行中 |
+| [easyNER](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/easyNER) | 任务指向型端到端NER框架      | 命名实体识别       | 进行中 |
 
-[Biosan维修部维护效率提升项目](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/Biosan-service-upgrade-2019)
 
-[easyNER](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/easyNER)：任务指向型端到端NER框架
 

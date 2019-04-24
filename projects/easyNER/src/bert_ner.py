@@ -11,7 +11,8 @@ class BERTNER:
 	def __init__(self):
 		cur = '/'.join(os.path.abspath(__file__).split('/')[:-1])
 		self.train_path = os.path.join(cur, '../source/data/ner_data/ner_train.txt')
-		self.model_path = os.path.join(cur, 'model/bert_model_20.h5')
+		# self.model_path = os.path.join(cur, 'model/bert_model_20.h5')
+		self.model_path = 'D:\\DataWarehouse\\BERT\\bert_model_20.h5'
 		self.vocab_path = os.path.join(cur, 'model/vocab.txt')
 		self.datas, self.word_dict = self.build_data()
 		self.class_dict ={
