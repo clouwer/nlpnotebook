@@ -124,13 +124,15 @@ re.finditer('胸部正位+左斜位片', text)
 
 NER部分采用当前state-of-the-art对应的BiLSTM+CRF方案和BERT方案
 
-可使用[预训练词向量](https://github.com/Embedding/Chinese-Word-Vectors) 
+
 
 #### BiLSTM+CRF
 
 运行`src/lstm_train.py` ，模型保存在 `src/model` 目录下
 
 模型设置input_length = 150，所以预测之前要把长文本打散成150字以下的短句。
+
+可使用[预训练词向量](https://github.com/Embedding/Chinese-Word-Vectors)，下载修改代码的embeding部分代替`src/model`目录下的`token_vec_300.bin`即可
 
 | 模型       | 训练集 | 测试集 | 训练集准确率 | 测试集准确率 |          |
 | ---------- | ------ | ------ | ------------ | ------------ | -------- |
