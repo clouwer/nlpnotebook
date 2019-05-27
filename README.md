@@ -163,6 +163,8 @@ itchat：
 
 Neo4j：知识图谱工具Py2Neo [Neo4j简介及Py2Neo的用法](https://cuiqingcai.com/4778.html)
 
+Levenshtein Distance：字符串相似度算法，纠正错误拼写
+
 BERT：
 
 - 团队预训练好的[BERT-base Chinese](https://storage.googleapis.com/bert_models/2018_11_03/chinese_L-12_H-768_A-12.zip)模型（364.20MB）
@@ -195,6 +197,8 @@ BERT：
 ### 应用场景
 
 中文聊天机器人：[《聊天机器人知识整理》](md/聊天机器人知识整理.md)
+
+- DeepPavlov：https://github.com/deepmipt/DeepPavlov
 
 - [从产品完整性的角度浅谈chatbot](https://zhuanlan.zhihu.com/p/34927757)
 - [基于Rasa_NLU的微信chatbot](http://rowl1ng.com/%E6%8A%80%E6%9C%AF/chatbot.html)
@@ -279,9 +283,9 @@ NER (Named Entity Recognition，命名实体识别):
 
 | 项目名称                                                     | 中文名称                       | 项目技术点         | 状态   |
 | ------------------------------------------------------------ | ------------------------------ | ------------------ | ------ |
-| [Biosan-service-upgrade-2019](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/Biosan-service-upgrade-2019) | Biosan维修部维护效率提升项目   | 机器学习，文本挖掘 | 进行中 |
-| [easyNER](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/easyNER) | 任务指向型端到端NER框架        | 命名实体识别       | 进行中 |
-| [fatface5](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/fatface5) | 给女朋友用的微信聊天机器人搭建 |                    | 施工中 |
+| [Biosan-service-upgrade-2019](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/Biosan-service-upgrade-2019) | Biosan维修部维护效率提升项目   | 机器学习，文本挖掘 | 施工中 |
+| [easyNER](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/easyNER) | 任务指向型端到端NER框架        | 命名实体识别       | 施工中 |
+| [fatface5](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/fatface5) | 给女朋友用的微信聊天机器人搭建 | 意图识别，API      | 施工中 |
 
 
 

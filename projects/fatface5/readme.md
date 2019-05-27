@@ -8,7 +8,17 @@
 
 ### 拟实现功能
 
+API部分
+
 - 微信端口连接
+
+数据获取部分
+
+- 豆瓣小组爬虫
+- 微信聊天记录语料整理
+
+聊天机器人部分
+
 - NLU，NLG
 - 人格信息
 - 敏感词过滤
@@ -21,10 +31,11 @@
 - 任务驱动式的半闲聊机器人
 - 主要工作是夸到开心
 - 偶尔还能查查天气，测测运势
+- 基于规则的小游戏模块
 
 
 
-### 前期准备
+### 数据获取
 
 使用什么数据集训练决定了对话类型
 
@@ -33,6 +44,14 @@
   - [豆瓣相互表扬小组](https://www.douban.com/group/kuakua/)
 - 情侣聊天语料来源：
   - 与女朋友的聊天记录
+
+
+
+### 意图识别
+
+由于任务驱动 + 功能局限的特性，实现方案优先考虑基于规则的排序方案
+
+在后续版本中再进行迭代
 
 
 
@@ -58,3 +77,6 @@ http://blog.topspeedsnail.com/archives/10735/comment-page-1#comment-1161%E3%80%8
 豆瓣小组爬虫 ：https://github.com/kaito-kidd/douban-group-spider
 
 https://github.com/qhduan/ConversationalRobotDesign
+
+https://github.com/zhihao-chen/QASystemOnMedicalGraph
+
