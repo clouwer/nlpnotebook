@@ -36,22 +36,6 @@
 
 
 
-### 知识网络
-
-
-
-##### 机器学习方法
-
-LogisticRegression，LinearSVC，LightGbm……
-
-
-
-##### 深度学习方法
-
-Attention，AttentionRNN，Capsule，Convlstm，Dpcnn，Lstmgru，RCNN，SimpleCNN，SnapshotCallback，TextCNN，TextRNN……
-
-
-
 ### 环境搭建
 
 Google Colab:   [《Google Colab配置记录》](md/Google Colab配置记录.md)
