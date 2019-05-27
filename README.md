@@ -6,51 +6,6 @@
 
 
 
-### 未消化完的学习资料
-
-
-
-[文本关键词提取算法总结和Python实现](https://zhuanlan.zhihu.com/p/49049482)
-
-[Python标准库01 正则表达式 (re包)](http://www.cnblogs.com/vamei/archive/2012/08/31/2661870.html)
-
-[文本分析_机器学习PAI-阿里云](https://help.aliyun.com/document_detail/42747.html?spm=a2c4g.11186623.6.554.sGWW2U#%E5%85%B3%E9%94%AE%E8%AF%8D%E6%8A%BD%E5%8F%96)
-
-[练手|常见30种NLP任务的练手项目](https://zhuanlan.zhihu.com/p/51279338)
-
-[NLP能解决语义问题吗？](https://zhuanlan.zhihu.com/p/44023294)
-
-[谈谈数据科学](https://zhuanlan.zhihu.com/p/38198345)
-
-[中文分词是个伪问题](https://zhuanlan.zhihu.com/p/54499197)
-
-[初入NLP领域的一些小建议](https://zhuanlan.zhihu.com/p/59184256)
-
-[NLP自然语言处理从入门到迷茫](https://zhuanlan.zhihu.com/p/32951278)
-
-[学术派整理,一份从基础到实战的 NLP 学习清单~](https://zhuanlan.zhihu.com/p/58687602)
-
-[自然语言处理是如何工作的？一步步教你构建 NLP 流水线
-机器之心](https://zhuanlan.zhihu.com/p/41850756)
-
-[蚂蚁金融NLP竞赛——文本语义相似度赛题总结](https://zhuanlan.zhihu.com/p/51675979)
-
-[别求面经了！小夕手把手教你斩下NLP算法岗offer！（19.3.21更新）](https://zhuanlan.zhihu.com/p/45802662)
-
-[如何解决90％的NLP问题：逐步指导](https://zhuanlan.zhihu.com/p/57658502)
-
-[NLP 教程：词性标注、依存分析和命名实体识别解析与应用](https://ai.yanxishe.com/page/TextTranslation/848)
-
-**[语音语义字幕组](https://ai.yanxishe.com/page/translateGroup/6)**
-
-[利用Python实现中文文本关键词抽取的三种方法](https://github.com/AimeeLee77/keyword_extraction)
-
-[以 gensim 訓練中文詞向量](https://zake7749.github.io/2016/08/28/word2vec-with-gensim/)
-
-[SnowNLP: Simplified Chinese Text Processing](https://github.com/isnowfy/snownlp)
-
-
-
 ### NLP任务总结
 
 自然语言处理（简称NLP），是研究计算机处理人类语言的一门技术，包括：
@@ -74,6 +29,10 @@
 - 简单的任务：拼写检查，关键词检索，同义词检索等
 - 复杂一点的任务：信息提取（比如从网页中提取价格，产地，公司名等信息），情感分析，文本分类等
 - 更复杂的任务：机器翻译，人机对话，QA系统
+
+
+
+中英文差异：汉语重义合，英语重形合
 
 
 
@@ -112,6 +71,10 @@ Win10下的环境搭建：
 
 ### Github库
 
+NLP研究入门之道：https://github.com/zibuyu/research_tao
+
+复旦NLP实验室NLP上手教程：https://github.com/FudanNLP/nlp-beginner
+
 [Information-Extraction-Chinese](https://github.com/crownpku/Information-Extraction-Chinese)： 中文实体识别与关系提取
 
 [SnowNLP: Simplified Chinese Text Processing](https://github.com/isnowfy/snownlp)
@@ -146,6 +109,10 @@ CDCS 中国数据竞赛优胜解集锦：https://github.com/geekinglcq/CDCS
 
 HanLP：https://github.com/hankcs/pyhanlp  [词性标注](http://www.hankcs.com/nlp/part-of-speech-tagging.html)
 
+awesome-chinese-nlp：https://github.com/crownpku/Awesome-Chinese-NLP
+
+all kinds of text classification models：https://github.com/brightmart/text_classification
+
 
 
 ### Blog
@@ -153,6 +120,8 @@ HanLP：https://github.com/hankcs/pyhanlp  [词性标注](http://www.hankcs.com/
 刘焕勇：https://liuhuanyong.github.io/
 
 Machine Learning Mastery 博客文章翻译：https://github.com/apachecn/ml-mastery-zh
+
+Tensorflow练习：斗大的熊猫http://blog.topspeedsnail.com/
 
 
 
@@ -324,10 +293,11 @@ NER (Named Entity Recognition，命名实体识别):
 
 ### NLP项目列表
 
-| 项目名称                                                     | 中文名称                     | 项目技术点         | 状态   |
-| ------------------------------------------------------------ | ---------------------------- | ------------------ | ------ |
-| [Biosan-service-upgrade-2019](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/Biosan-service-upgrade-2019) | Biosan维修部维护效率提升项目 | 机器学习，文本挖掘 | 进行中 |
-| [easyNER](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/easyNER) | 任务指向型端到端NER框架      | 命名实体识别       | 进行中 |
+| 项目名称                                                     | 中文名称                       | 项目技术点         | 状态   |
+| ------------------------------------------------------------ | ------------------------------ | ------------------ | ------ |
+| [Biosan-service-upgrade-2019](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/Biosan-service-upgrade-2019) | Biosan维修部维护效率提升项目   | 机器学习，文本挖掘 | 进行中 |
+| [easyNER](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/easyNER) | 任务指向型端到端NER框架        | 命名实体识别       | 进行中 |
+| fatface5                                                     | 给女朋友用的微信聊天机器人搭建 |                    | 施工中 |
 
 
 
