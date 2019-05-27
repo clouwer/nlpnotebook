@@ -297,7 +297,7 @@ NER (Named Entity Recognition，命名实体识别):
 | ------------------------------------------------------------ | ------------------------------ | ------------------ | ------ |
 | [Biosan-service-upgrade-2019](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/Biosan-service-upgrade-2019) | Biosan维修部维护效率提升项目   | 机器学习，文本挖掘 | 进行中 |
 | [easyNER](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/easyNER) | 任务指向型端到端NER框架        | 命名实体识别       | 进行中 |
-| fatface5                                                     | 给女朋友用的微信聊天机器人搭建 |                    | 施工中 |
+| [fatface5](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/fatface5) | 给女朋友用的微信聊天机器人搭建 |                    | 施工中 |
 
 
 
