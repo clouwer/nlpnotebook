@@ -165,6 +165,8 @@ Neo4j：知识图谱工具Py2Neo [Neo4j简介及Py2Neo的用法](https://cuiqing
 
 Levenshtein Distance：字符串相似度算法，纠正错误拼写
 
+爬虫：[《爬虫学习笔记》](md/爬虫学习笔记.md)
+
 BERT：
 
 - 团队预训练好的[BERT-base Chinese](https://storage.googleapis.com/bert_models/2018_11_03/chinese_L-12_H-768_A-12.zip)模型（364.20MB）
