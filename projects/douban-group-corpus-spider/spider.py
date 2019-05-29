@@ -3,8 +3,8 @@
 
 import pandas as pd
 from bs4 import BeautifulSoup
-from config import GROUP_DICT, MAX_PAGE, SQL_DICT, HEADERS, PROXY_POOL_URL, MAX_GET_RETRY, OUTPUT_PATH
-from base import _Sql_Base, get_logger
+from config import GROUP_DICT, MAX_PAGE, SQL_DICT, HEADERS, PROXY_POOL_URL, MAX_GET_RETRY, OUTPUT_PATH, proxies
+from base import _Sql_Base
 import requests
 import emoji
 import time
@@ -22,7 +22,18 @@ class HTTPError(Exception):
 
     def __str__(self):
         return "%s HTTP %s" % (self.url, self.status_code)
-    
+
+def get_logger(name):
+    """logger
+    """
+    default_logger = logging.getLogger(name)
+    default_logger.setLevel(logging.DEBUG)
+    stream = logging.StreamHandler()
+    stream.setLevel(logging.DEBUG)
+    formatter = logging.Formatter("[%(levelname)s] %(asctime)s - %(message)s")
+    stream.setFormatter(formatter)
+    default_logger.addHandler(stream)
+    return default_logger    
 
 class Douban_corpus_spider(_Sql_Base):
 
@@ -39,7 +50,7 @@ class Douban_corpus_spider(_Sql_Base):
     def request_douban(self, url):
 
         headers = {
-            'User-Agent': HEADERS
+            'User-Agent': HEADERS['GalaxyS5']
         }
         for i in range(MAX_GET_RETRY):
             try:

@@ -31,14 +31,4 @@ class _Sql_Base:
         with open(file_path, 'w') as json_file:
             json_file.write(json.dumps(file))
 
-def get_logger(name):
-    """logger
-    """
-    default_logger = logging.getLogger(name)
-    default_logger.setLevel(logging.DEBUG)
-    stream = logging.StreamHandler()
-    stream.setLevel(logging.DEBUG)
-    formatter = logging.Formatter("[%(levelname)s] %(asctime)s - %(message)s")
-    stream.setFormatter(formatter)
-    default_logger.addHandler(stream)
-    return default_logger
+
