@@ -3,37 +3,79 @@
 
 import pandas as pd
 from bs4 import BeautifulSoup
-from config import GROUP_DICT, MAX_PAGE, SQL_DICT, HEADERS
-from base import _Sql_Base, ProxyManager
+from config import GROUP_DICT, MAX_PAGE, SQL_DICT, HEADERS, PROXY_POOL_URL, MAX_GET_RETRY, OUTPUT_PATH
+from base import _Sql_Base, get_logger
 import requests
+import emoji
+import time
+import random
+import logging
+import os
+
+class HTTPError(Exception):
+
+    """ HTTP状态码不是200异常 """
+
+    def __init__(self, status_code, url):
+        self.status_code = status_code
+        self.url = url
+
+    def __str__(self):
+        return "%s HTTP %s" % (self.url, self.status_code)
+    
 
 class Douban_corpus_spider(_Sql_Base):
 
-    def __init__(self):
+    def __init__(self, is_proxy = False):
 
         self.GROUP_DICT = GROUP_DICT
         self.MAX_PAGE = MAX_PAGE
         self.sql_engine = self.create_engine(SQL_DICT)
-        self.ProxyManager = ProxyManager("./proxy_list.txt", 30)
-
+        self.is_proxy = is_proxy
+        if is_proxy:
+            self.proxyIP = self.get_proxy()
+        self.logger = get_logger("douban_spider")
+            
     def request_douban(self, url):
-        kwargs = {
-            "headers": {
-                "User-Agent": HEADERS,
-                "Referer": "http://www.douban.com/"
-            },
+
+        headers = {
+            'User-Agent': HEADERS
         }
+        for i in range(MAX_GET_RETRY):
+            try:
+                if self.is_proxy:
+                    proxyIP = self.proxyIP
+                    proxies = {
+                        'http' : proxyIP,
+                        'https': proxyIP
+                    }
+                    response = requests.get(url, proxies=proxies, headers=headers)
+                else:
+                    response = requests.get(url, headers=headers)
+                if response.status_code != 200:
+                    raise HTTPError(response.status_code, url)
+                else:
+                    print('proxy: %s sucessfully get data from %s' %(self.proxyIP, url))
+                break
+            except Exception as exc:
+                self.logger.warn("%s %d failed!\n%s", url, i, str(exc))
+                if self.is_proxy:
+                    self.proxyIP = self.get_proxy()
+                continue
+        return response.text
+    
+    # 从代理池中随机取出一个IP
+    def get_proxy(self):
         try:
-            kwargs["proxies"] = {
-                        "http": self.ProxyManager.get_proxy()}
-            response = requests.get(url, **kwargs)
+            response = requests.get(PROXY_POOL_URL)
             if response.status_code == 200:
-                return response.text
-        except requests.RequestException:
+                print('proxy: %s' %response.text)
+                return "http://%s" %response.text
+        except ConnectionError:
             return None
 
-    def spider_links(self, group_link, page):
-        url = '{}discussion?start={}'.format(group_link, str(page*25))
+    def spider_links(self, group, page):
+        url = '{}discussion?start={}'.format(self.GROUP_DICT[group], str(page*25))
         html = self.request_douban(url)
         soup = BeautifulSoup(html, 'lxml')
         list_ = soup.find(class_='olt').find_all('tr')
@@ -64,27 +106,43 @@ class Douban_corpus_spider(_Sql_Base):
         return page_author_diag, page_comments
 
     def spider_group(self, group):
-    	spider_outputs = {}
-    	link_list = []
-    	title_list = []
-    	for page in range(self.MAX_PAGE):
-    		link_list_page, title_list_page = self.spider_links(group, page)
-    		link_list = link_list + link_list_page
-    		title_list = title_list + title_list_page
-    	for link in link_list:
-    		spider_outputs[link] = {}
-    		spider_outputs[link]['title'] = title_list[link_list.index(link)]
-    		spider_outputs[link]['author_diag'], spider_outputs[link]['comments'] = self.spider_page(link)	
-    	return spider_outputs
+        spider_outputs = {}
+        link_list = []
+        title_list = []
+        for page in range(self.MAX_PAGE):
+            link_list_page, title_list_page = self.spider_links(group, page)
+            link_list = link_list + link_list_page
+            title_list = title_list + title_list_page
+        for link in link_list:
+            spider_outputs[link] = {}
+            spider_outputs[link]['title'] = title_list[link_list.index(link)]
+            spider_outputs[link]['author_diag'], spider_outputs[link]['comments'] = self.spider_page(link)
+            self.json_write(spider_outputs, os.path.join(OUTPUT_PATH, '{}.json'.format(group)))
+        return spider_outputs
+
+    def group_dict_transfer(self, output_dict):
+        data = pd.DataFrame(output_dict).T
+        data['link'] = data.index
+        data = data.reset_index(drop = True)[['link','title','author_diag','comments']]
+        def comments_sub(a):
+            b = ''
+            for item in a:
+                b = item + '|' + b
+            return b
+        data['comments'] = data['comments'].apply(comments_sub)
+        for col in ['title','author_diag','comments']:
+            data[col] = data[col].apply(emoji.demojize)
+        return data
 
     def run(self):
-        for group in self.GROUP_DICT.values():
+        for group in self.GROUP_DICT.keys():
             output_dict = self.spider_group(group)
-            self.table_save(pd.DataFrame(output_dict).T, group)
-
-def main():
-    dcs = Douban_corpus_spider()
-    dcs.run()
+            output_table = self.group_dict_transfer(output_dict)
+            self.table_save(output_table, group)
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--proxy', type= int, default= 0)
+    args = parser.parse_args()
+    dcs = Douban_corpus_spider(is_proxy = args.proxy)
+    dcs.run()
