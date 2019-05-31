@@ -3,7 +3,7 @@
 
 import pandas as pd
 from bs4 import BeautifulSoup
-from config import GROUP_DICT, MAX_PAGE, SQL_DICT, HEADERS, PROXY_POOL_URL, MAX_GET_RETRY, OUTPUT_PATH, proxies
+from config import GROUP_DICT, MAX_PAGE, SQL_DICT, HEADERS, PROXY_POOL_URL, MAX_GET_RETRY, OUTPUT_PATH, proxies, SPIDER_INTERVAL
 from base import _Sql_Base
 import requests
 import emoji
@@ -48,7 +48,6 @@ class Douban_corpus_spider(_Sql_Base):
         self.logger = get_logger("douban_spider")
             
     def request_douban(self, url):
-
         headers = {
             'User-Agent': HEADERS['GalaxyS5']
         }
@@ -65,14 +64,14 @@ class Douban_corpus_spider(_Sql_Base):
                     response = requests.get(url, headers=headers)
                 if response.status_code != 200:
                     raise HTTPError(response.status_code, url)
-                else:
-                    print('proxy: %s sucessfully get data from %s' %(self.proxyIP, url))
+                print('successfully get data from %s' %url)
                 break
             except Exception as exc:
                 self.logger.warn("%s %d failed!\n%s", url, i, str(exc))
                 if self.is_proxy:
                     self.proxyIP = self.get_proxy()
                 continue
+        time.sleep(SPIDER_INTERVAL)
         return response.text
     
     # 从代理池中随机取出一个IP
@@ -102,33 +101,33 @@ class Douban_corpus_spider(_Sql_Base):
     def spider_page(self, url):
         html = self.request_douban(url)
         soup = BeautifulSoup(html, 'lxml')
-        for item in soup.find(type="application/ld+json"):
-            try:
-                page_author_diag = json.loads(item)['text']
-            except:
-                page_author_diag = ''
-        list_ = soup.find_all(class_='clearfix comment-item reply-item')
+        page_author_diag = []
+        for item in soup.find(class_="note-content paper").find_all('p'):
+            if len(item) > 0:
+                page_author_diag.append(item.contents[0])
+        list_ = soup.find_all(class_ = 'content')
         page_comments = []
         for item in list_:
-            try:
-                page_comments.append(item.find('p').contents[0])
-            except:
-                continue
+            page_comments.append(item.contents[2].replace(' ','').replace('\n',''))
         return page_author_diag, page_comments
 
-    def spider_group(self, group):
+    def spider_group(self, group, max_page):
         spider_outputs = {}
         link_list = []
         title_list = []
-        for page in range(self.MAX_PAGE):
-            link_list_page, title_list_page = self.spider_links(group, page)
+        for page in range(max_page):
+            link_list_page, title_list_page = self.spider_links(group, page)            
             link_list = link_list + link_list_page
             title_list = title_list + title_list_page
         for link in link_list:
-            spider_outputs[link] = {}
-            spider_outputs[link]['title'] = title_list[link_list.index(link)]
-            spider_outputs[link]['author_diag'], spider_outputs[link]['comments'] = self.spider_page(link)
-            self.json_write(spider_outputs, os.path.join(OUTPUT_PATH, '{}.json'.format(group)))
+            try:
+                spider_outputs[link] = {}
+                spider_outputs[link]['title'] = title_list[link_list.index(link)]
+                spider_outputs[link]['author_diag'], spider_outputs[link]['comments'] = self.spider_page(link)
+                self.json_write(spider_outputs, os.path.join(OUTPUT_PATH, '{}.json'.format(group)))
+            except:
+                print('%s fail' %link)
+                continue        
         return spider_outputs
 
     def group_dict_transfer(self, output_dict):
@@ -147,7 +146,7 @@ class Douban_corpus_spider(_Sql_Base):
 
     def run(self):
         for group in self.GROUP_DICT.keys():
-            output_dict = self.spider_group(group)
+            output_dict = self.spider_group(group, self.MAX_PAGE)
             output_table = self.group_dict_transfer(output_dict)
             self.table_save(output_table, group)
 

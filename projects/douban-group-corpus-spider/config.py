@@ -18,7 +18,10 @@ GROUP_DICT = {
 }
 
 # 抓取前多少页
-MAX_PAGE = 20
+MAX_PAGE = 5
+
+# 爬虫时间间隔
+SPIDER_INTERVAL = 10
 
 # 输出保存路径
 OUTPUT_PATH = './static/'
@@ -26,8 +29,8 @@ OUTPUT_PATH = './static/'
 # 数据库配置
 SQL_DICT = {
 	'user' : 'root',
-	'password' : 'mysql123',
-	'ip' : '172.16.0.164',
+	'password' : 'biosan#17',
+	'ip' : '172.16.0.34',
 	'database' : 'corpus_spider'
 }
 
