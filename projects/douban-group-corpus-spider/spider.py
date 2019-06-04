@@ -1,4 +1,3 @@
-
 # coding: utf-8
 
 import pandas as pd
@@ -11,6 +10,7 @@ import time
 import random
 import logging
 import os
+import argparse
 
 class HTTPError(Exception):
 
@@ -71,7 +71,7 @@ class Douban_corpus_spider(_Sql_Base):
                 if self.is_proxy:
                     self.proxyIP = self.get_proxy()
                 continue
-        time.sleep(SPIDER_INTERVAL)
+#         time.sleep(2)
         return response.text
     
     # 从代理池中随机取出一个IP
@@ -80,6 +80,7 @@ class Douban_corpus_spider(_Sql_Base):
             response = requests.get(PROXY_POOL_URL)
             if response.status_code == 200:
                 print('proxy: %s' %response.text)
+#                 time.sleep(1)
                 return "http://%s" %response.text
         except ConnectionError:
             return None
@@ -134,12 +135,8 @@ class Douban_corpus_spider(_Sql_Base):
         data = pd.DataFrame(output_dict).T
         data['link'] = data.index
         data = data.reset_index(drop = True)[['link','title','author_diag','comments']]
-        def comments_sub(a):
-            b = ''
-            for item in a:
-                b = item + '|' + b
-            return b
-        data['comments'] = data['comments'].apply(comments_sub)
+        data['author_diag'] = data['author_diag'].apply(lambda x: x[0] if x else '')
+        data['comments'] = data['comments'].apply(lambda x: '|'.join(x))
         for col in ['title','author_diag','comments']:
             data[col] = data[col].apply(emoji.demojize)
         return data

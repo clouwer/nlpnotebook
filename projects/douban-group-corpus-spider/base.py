@@ -30,5 +30,3 @@ class _Sql_Base:
     def json_write(self, file, file_path):
         with open(file_path, 'w') as json_file:
             json_file.write(json.dumps(file))
-
-
