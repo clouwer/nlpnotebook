@@ -2,7 +2,7 @@
 
 import pandas as pd
 from bs4 import BeautifulSoup
-from config import GROUP_DICT, MAX_PAGE, SQL_DICT, HEADERS, PROXY_POOL_URL, MAX_GET_RETRY, OUTPUT_PATH, proxies, SPIDER_INTERVAL
+from config import GROUP_DICT, MAX_PAGE, SQL_DICT, HEADERS, PROXY_POOL_URL, MAX_GET_RETRY, OUTPUT_PATH, SPIDER_INTERVAL
 from base import _Sql_Base
 import requests
 import emoji

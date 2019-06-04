@@ -40,9 +40,3 @@ PROXY_POOL_URL = 'http://http.tiqu.alicdns.com/getip3?num=1&type=3&pro=0&city=0&
 
 # 代理访问重试次数
 MAX_GET_RETRY = 20
-
-# 常用代理
-proxies_or_path = 'proxy_list.txt'
-
-with open(proxies_or_path, 'r') as f:
-    proxies = f.read().splitlines()
