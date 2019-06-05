@@ -277,20 +277,18 @@ NER (Named Entity Recognition，命名实体识别):
 
 [“达观杯”文本智能处理挑战赛](md/达观文本智能处理挑战.md)
 
-[第二届搜狐内容识别算法大赛](md/搜狐第二届算法大赛.md)
-
 [2018 CCL-中移在线客服领域用户意图分类](https://github.com/nlpjoe/2018-CCL-UIIMCS)
 
 
 
 ### NLP项目列表
 
-| 项目名称                                                     | 中文名称                       | 项目技术点         | 状态   |
-| ------------------------------------------------------------ | ------------------------------ | ------------------ | ------ |
-| [Biosan-service-upgrade-2019](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/Biosan-service-upgrade-2019) | Biosan维修部维护效率提升项目   | 机器学习，文本挖掘 | 施工中 |
-| [easyNER](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/easyNER) | 任务指向型端到端NER框架        | 命名实体识别       | 施工中 |
-| [fatface5](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/fatface5) | 给女朋友用的微信聊天机器人搭建 | 意图识别，API      | 施工中 |
-| [douban-group-corpus-spider](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/douban-group-corpus-spider) | 简易豆瓣小组语料爬虫           | 爬虫               | 施工中 |
+| 项目名称                                                     | 中文名称                       | 项目技术点                        | 状态   |
+| ------------------------------------------------------------ | ------------------------------ | --------------------------------- | ------ |
+| [Biosan-service-upgrade-2019](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/Biosan-service-upgrade-2019) | Biosan维修部维护效率提升项目   | 机器学习，文本挖掘                | 施工中 |
+| [easyNER](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/easyNER) | 任务指向型端到端NER框架        | 命名实体识别                      | 施工中 |
+| [fatface5](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/fatface5) | 给女朋友用的微信聊天机器人搭建 | 语义理解，知识图谱，意图识别，API | 施工中 |
+| [douban-group-corpus-spider](https://github.com/kenshinpg/nlpnotebook/tree/master/projects/douban-group-corpus-spider) | 简易豆瓣小组语料爬虫           | 爬虫                              | 施工中 |
 
 
 

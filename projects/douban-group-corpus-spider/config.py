@@ -36,7 +36,7 @@ SQL_DICT = {
 
 # 代理池地址
 # PROXY_POOL_URL = 'http://localhost:5555/random'
-PROXY_POOL_URL = 'http://http.tiqu.alicdns.com/getip3?num=1&type=3&pro=0&city=0&yys=100017&port=1&pack=54305&ts=0&ys=0&cs=0&lb=6&sb=0&pb=45&mr=1&regions=&gm=4'
+PROXY_POOL_URL = 'http://http.tiqu.alicdns.com/getip3?num=1&type=3&pro=0&city=0&yys=100017&port=1&pack=54305&ts=0&ys=0&cs=0&lb=1&sb=0&pb=4&mr=1&regions=&gm=4'
 
 # 代理访问重试次数
 MAX_GET_RETRY = 20
